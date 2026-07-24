@@ -155,22 +155,22 @@ h1,h2,h3{font-family:var(--font-disp);font-weight:600;line-height:1.08;letter-sp
 .lead{font-size:1.12rem;color:var(--ink-soft);max-width:640px}
 
 /* ============ HERO ============ */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:140px 0 70px;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:140px 0 70px;overflow:hidden;text-align:center}
 .hero-bg{position:absolute;inset:0;z-index:-1}
 .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);filter:saturate(.9)}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(247,243,234,.97) 0%,rgba(247,243,234,.9) 38%,rgba(231,241,234,.62) 65%,rgba(231,241,234,.25) 100%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;width:100%}
+.hero-content{max-width:800px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
 .hero-badge{
   display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.75);
   border:1px solid rgba(255,255,255,.9);padding:9px 18px;border-radius:40px;font-size:.82rem;font-weight:600;
-  color:var(--sage-900);box-shadow:var(--shadow-sm);margin-bottom:26px;backdrop-filter:blur(8px);
+  color:var(--sage-900);box-shadow:var(--shadow-sm);margin:0 auto 26px;backdrop-filter:blur(8px);
 }
 .hero-badge .de-flag{width:20px;height:14px;border-radius:3px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.2)}
 .hero h1{font-size:clamp(2.5rem,6vw,4.6rem);margin-bottom:24px}
 .hero h1 .accent{font-style:italic;font-weight:400;color:var(--sage-700);position:relative;white-space:nowrap}
 .hero h1 .accent::after{content:'';position:absolute;left:0;bottom:6px;width:100%;height:10px;background:var(--apricot);opacity:.28;border-radius:6px;z-index:-1}
-.hero-sub{font-size:1.18rem;color:var(--ink-soft);max-width:480px;margin-bottom:34px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-sub{font-size:1.18rem;color:var(--ink-soft);max-width:640px;margin:0 auto 34px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center}
 .btn{
   display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:40px;font-weight:700;font-size:1rem;
   cursor:pointer;border:none;transition:all .4s cubic-bezier(.2,.8,.2,1);font-family:var(--font-body);
@@ -180,30 +180,6 @@ h1,h2,h3{font-family:var(--font-disp);font-weight:600;line-height:1.08;letter-sp
 .btn-ghost{background:rgba(255,255,255,.7);color:var(--sage-900);border:1.5px solid var(--line)}
 .btn-ghost:hover{background:#fff;transform:translateY(-3px);box-shadow:var(--shadow-sm)}
 .btn svg{width:18px;height:18px}
-
-/* hero cartoon */
-.hero-art{position:relative;display:flex;justify-content:center;align-items:flex-end}
-.hero-art-ring{
-  position:absolute;width:108%;height:108%;border-radius:50%;
-  background:radial-gradient(circle at 50% 40%,rgba(255,255,255,.85),rgba(220,237,227,.5) 60%,transparent 72%);
-  z-index:-1;
-}
-.hero-cartoon{
-  width:min(420px,80%);filter:drop-shadow(0 30px 40px rgba(47,74,58,.22));
-  animation:bobble 6s ease-in-out infinite;cursor:pointer;
-}
-@keyframes bobble{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(1.2deg)}}
-.float-chip{
-  position:absolute;background:#fff;border-radius:18px;padding:11px 16px;box-shadow:var(--shadow-md);
-  font-size:.82rem;font-weight:600;color:var(--sage-900);display:flex;align-items:center;gap:9px;
-  border:1px solid rgba(255,255,255,.9);
-}
-.float-chip .ico{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
-.float-chip small{display:block;font-weight:500;color:var(--ink-soft);font-size:.72rem}
-.chip-1{top:8%;left:-4%;animation:floaty 5s ease-in-out infinite}
-.chip-2{bottom:18%;right:-6%;animation:floaty 6s ease-in-out infinite .6s}
-.chip-3{bottom:-2%;left:6%;animation:floaty 5.5s ease-in-out infinite .3s}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
 /* trust strip */
 .trust{padding:0 0 30px;margin-top:-10px}
@@ -295,7 +271,7 @@ h1,h2,h3{font-family:var(--font-disp);font-weight:600;line-height:1.08;letter-sp
 
 /* ============ SPACE GALLERY ============ */
 .space{padding:100px 0;background:linear-gradient(180deg,transparent,rgba(231,241,234,.5),transparent)}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:16px;margin-top:50px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:20px;margin-top:50px}
 .gitem{border-radius:var(--r-md);overflow:hidden;cursor:pointer;position:relative;box-shadow:var(--shadow-sm);background:#fff}
 .gitem img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
 .gitem:hover img{transform:scale(1.09)}
@@ -304,8 +280,6 @@ h1,h2,h3{font-family:var(--font-disp);font-weight:600;line-height:1.08;letter-sp
 .gitem .zoom{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;opacity:0;transform:scale(.7);transition:all .4s;pointer-events:none}
 .gitem::after{pointer-events:none}
 .gitem:hover .zoom{opacity:1;transform:scale(1)}
-.g-wide{grid-column:span 2}
-.g-tall{grid-row:span 2}
 
 /* ============ REVIEWS ============ */
 .reviews{padding:100px 0;overflow:hidden}
@@ -400,18 +374,11 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
   .nav-links{display:none}
   .cta-nav{display:none}
   .burger{display:flex}
-  .hero-grid{grid-template-columns:1fr;gap:30px;text-align:center}
-  .hero-cta{justify-content:center}
-  .hero-sub{margin-left:auto;margin-right:auto}
-  .hero-art{order:-1}
-  .hero-cartoon{width:min(320px,68%)}
   .about-grid{grid-template-columns:1fr;gap:60px}
   .about-photo-wrap{top:0;max-width:420px;margin:0 auto}
   .philo-grid{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
-  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
-  .g-wide{grid-column:span 2}
-  .g-tall{grid-row:span 1}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
   .contact-grid{grid-template-columns:1fr}
   .contact-map{min-height:340px}
   .footer-grid{grid-template-columns:1fr;gap:32px}
@@ -422,9 +389,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
   .nav-inner{padding:14px 18px}
   .creds{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr;grid-auto-rows:220px}
-  .g-wide{grid-column:span 1}
   .contact-info{padding:36px 26px}
-  .float-chip{display:none}
   .lang-switch{display:flex}
   .rev-card{width:280px}
 }
@@ -489,37 +454,19 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
     <img src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-136.jpg" alt="">
   </div>
   <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <div class="hero-badge reveal in">
-          <span class="de-flag"><svg viewBox="0 0 27 18"><rect width="27" height="6" fill="#000"/><rect y="6" width="27" height="6" fill="#DD0000"/><rect y="12" width="27" height="6" fill="#FFCE00"/></svg></span>
-          <span data-i18n="hero.badge">Εξειδίκευση στη Γερμανία · Πανεπιστήμιο Münster</span>
-        </div>
-        <h1><span data-i18n="hero.h1a">Παιδιατρική με</span> <span class="accent" data-i18n="hero.h1b">καρδιά</span> <span data-i18n="hero.h1c">& επιστημονική ακρίβεια.</span></h1>
-        <p class="hero-sub" data-i18n="hero.sub">Φροντίδα από τη γέννηση έως την εφηβεία, χτισμένη στην εμπιστοσύνη. Το γερμανικό ιατρικό πρότυπο συναντά την ελληνική ζεστασιά, στην Καλαμαριά Θεσσαλονίκης.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <span data-i18n="hero.cta1">Κλείστε ραντεβού</span>
-          </a>
-          <a href="#about" class="btn btn-ghost"><span data-i18n="hero.cta2">Γνωρίστε τον ιατρό</span></a>
-        </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal in">
+        <span class="de-flag"><svg viewBox="0 0 27 18"><rect width="27" height="6" fill="#000"/><rect y="6" width="27" height="6" fill="#DD0000"/><rect y="12" width="27" height="6" fill="#FFCE00"/></svg></span>
+        <span data-i18n="hero.badge">Εξειδίκευση στη Γερμανία · Πανεπιστήμιο Münster</span>
       </div>
-      <div class="hero-art">
-        <div class="hero-art-ring"></div>
-        <img class="hero-cartoon zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-142.jpg" alt="Σκίτσο Χρήστος Θάνος Παιδίατρος">
-        <div class="float-chip chip-1">
-          <span class="ico" style="background:rgba(194,94,110,.14)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c25e6e" stroke-width="2"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.7 0-3 .9-4.5 2.5C10.5 3.9 9.2 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/></svg></span>
-          <span><strong data-i18n="hero.chip1t">NICU & PICU</strong><small data-i18n="hero.chip1s">Εντατική Νεογνών</small></span>
-        </div>
-        <div class="float-chip chip-2">
-          <span class="ico" style="background:rgba(106,165,131,.16)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
-          <span><strong data-i18n="hero.chip2t">Λοιμωξιολογία</strong><small data-i18n="hero.chip2s">Ορθή χρήση αντιβιοτικών</small></span>
-        </div>
-        <div class="float-chip chip-3">
-          <span class="ico" style="background:rgba(127,179,207,.16)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7fb3cf" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/></svg></span>
-          <span><strong data-i18n="hero.chip3t">IBCLC</strong><small data-i18n="hero.chip3s">Σύμβουλος Θηλασμού</small></span>
-        </div>
+      <h1><span data-i18n="hero.h1a">Παιδιατρική με</span> <span class="accent" data-i18n="hero.h1b">καρδιά</span> <span data-i18n="hero.h1c">& επιστημονική ακρίβεια.</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Φροντίδα από τη γέννηση έως την εφηβεία, χτισμένη στην εμπιστοσύνη. Το γερμανικό ιατρικό πρότυπο συναντά την ελληνική ζεστασιά, στην Καλαμαριά Θεσσαλονίκης.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span data-i18n="hero.cta1">Κλείστε ραντεβού</span>
+        </a>
+        <a href="#about" class="btn btn-ghost"><span data-i18n="hero.cta2">Γνωρίστε τον ιατρό</span></a>
       </div>
     </div>
   </div>
@@ -560,7 +507,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
       </div>
       <div class="about-body reveal-r">
         <div class="eyebrow" data-i18n="about.eyebrow">Ο Ιατρός</div>
-        <h2 class="about-name">Christos Thanos</h2>
+        <h2 class="about-name">Χρήστος Θάνος</h2>
         <div class="about-role" data-i18n="about.role">Παιδίατρος — Παιδιατρική & Εφηβική Ιατρική</div>
         <p data-i18n="about.p1">Ο <strong>Χρήστος Θάνος</strong> είναι Παιδίατρος, πτυχιούχος της Ιατρικής Σχολής του Δημοκρίτειου Πανεπιστημίου Θράκης, με ακαδημαϊκή εκπαίδευση στη Γερμανία και εξειδίκευση στη Λοιμωξιολογία και στην Ιατρική της παιδικής και εφηβικής ηλικίας.</p>
         <p data-i18n="about.p2">Κατά τη διάρκεια της μετεκπαίδευσής του εργάστηκε σε ακαδημαϊκά νοσοκομεία του Πανεπιστημίου του Münster, αποκτώντας <strong>πολυετή εμπειρία σε όλο το φάσμα της Παιδιατρικής</strong> (2 εξ αυτών σε Μονάδες Εντατικής Νοσηλείας Νεογνών και Παίδων). Επιπλέον, εργάστηκε στο ιατρείο του καθηγητή Prof. Dr. Stefan Eber στο Μόναχο, όπως και στο παιδοπνευμονολογικό ιατρείο του επίκουρου καθηγητή Ε. Παρασκάκη στο Δ.Π.Θ.</p>
@@ -648,11 +595,11 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
       <p class="lead" data-i18n="space.lead">Φωτεινός, ζεστός και παιγνιώδης. Ένα περιβάλλον που κάνει τα παιδιά να νιώθουν άνετα και τους γονείς ήσυχους — στην καρδιά της Καλαμαριάς.</p>
     </div>
     <div class="gallery">
-      <div class="gitem g-wide reveal-scale"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-136.jpg" alt="Παιδικός χώρος ιατρείου"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
+      <div class="gitem reveal-scale"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-136.jpg" alt="Παιδικός χώρος ιατρείου"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
       <div class="gitem reveal-scale" data-delay="1"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-137.jpg" alt="Γωνιά αλλαγής"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
       <div class="gitem reveal-scale" data-delay="2"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-138.jpg" alt="Παιδικό τραπεζάκι"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
-      <div class="gitem g-tall reveal-scale"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-141.jpg" alt="Βιβλιοθήκη παιδιών"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
-      <div class="gitem g-wide reveal-scale" data-delay="1"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-139.jpg" alt="Εξεταστήριο"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
+      <div class="gitem reveal-scale"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-141.jpg" alt="Βιβλιοθήκη παιδιών"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
+      <div class="gitem reveal-scale" data-delay="1"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-139.jpg" alt="Εξεταστήριο"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
       <div class="gitem reveal-scale" data-delay="2"><img class="zoomable" src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-140.jpg" alt="Γραφείο ιατρού"><div class="zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#46765b" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M11 8v6M8 11h6"/></svg></div></div>
     </div>
   </div>
@@ -738,7 +685,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
       <div>
         <div class="f-brand">
           <img src="https://raw.githubusercontent.com/agelmet/THANOS/af2fb1fe1410c813547b13c8ce80e8af55a70de3/unnamed-142.jpg" alt="">
-          <div><div class="fn">Χρήστος Θάνος</div><div style="font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-300)" data-i18n="nav.brandsub">Παιδίατρος</div></div>
+          <div><div class="fn brand-name">Χρήστος Θάνος</div><div style="font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-300)" data-i18n="nav.brandsub">Παιδίατρος</div></div>
         </div>
         <p data-i18n="footer.tag">Παιδιατρική & Εφηβική Ιατρική με διεθνή εξειδίκευση. Το γερμανικό ιατρικό πρότυπο συναντά την ελληνική ζεστασιά.</p>
       </div>
@@ -759,7 +706,7 @@ footer p{color:rgba(255,255,255,.72);font-size:.92rem;max-width:320px}
       </div>
     </div>
     <div class="f-bottom">
-      <p>© <span id="yr"></span> Χρήστος Θάνος — <span data-i18n="footer.rights">Με επιφύλαξη κάθε δικαιώματος.</span></p>
+      <p>© <span id="yr"></span> <span class="brand-name">Χρήστος Θάνος</span> — <span data-i18n="footer.rights">Με επιφύλαξη κάθε δικαιώματος.</span></p>
       <a href="https://www.advonmedia.com" target="_blank" rel="noopener" class="advon"><span data-i18n="footer.design">Σχεδιασμός από</span> Advon Media</a>
     </div>
   </div>
@@ -776,7 +723,6 @@ const I18N = {
     "hero.badge":"Εξειδίκευση στη Γερμανία · Πανεπιστήμιο Münster","hero.h1a":"Παιδιατρική με","hero.h1b":"καρδιά","hero.h1c":"& επιστημονική ακρίβεια.",
     "hero.sub":"Φροντίδα από τη γέννηση έως την εφηβεία, χτισμένη στην εμπιστοσύνη. Το γερμανικό ιατρικό πρότυπο συναντά την ελληνική ζεστασιά, στην Καλαμαριά Θεσσαλονίκης.",
     "hero.cta1":"Κλείστε ραντεβού","hero.cta2":"Γνωρίστε τον ιατρό",
-    "hero.chip1t":"NICU & PICU","hero.chip1s":"Εντατική Νεογνών","hero.chip2t":"Λοιμωξιολογία","hero.chip2s":"Ορθή χρήση αντιβιοτικών","hero.chip3t":"IBCLC","hero.chip3s":"Σύμβουλος Θηλασμού",
     "trust.1":"Ακαδημαϊκή εκπαίδευση στη Γερμανία","trust.now":"σήμερα","trust.2":"Συνεχής κλινική εμπειρία","trust.3":"Άριστη βαθμολογία γονέων",
     "about.eyebrow":"Ο Ιατρός","about.role":"Παιδίατρος — Παιδιατρική & Εφηβική Ιατρική","about.tag":"Facharzt · Kinder- und Jugendmedizin",
     "about.p1":"Ο <strong>Χρήστος Θάνος</strong> είναι Παιδίατρος, πτυχιούχος της Ιατρικής Σχολής του Δημοκρίτειου Πανεπιστημίου Θράκης, με ακαδημαϊκή εκπαίδευση στη Γερμανία και εξειδίκευση στη Λοιμωξιολογία και στην Ιατρική της παιδικής και εφηβικής ηλικίας.",
@@ -808,7 +754,6 @@ const I18N = {
     "hero.badge":"Specialist training in Germany · University of Münster","hero.h1a":"Pediatrics with","hero.h1b":"heart","hero.h1c":"& scientific precision.",
     "hero.sub":"Care from birth through adolescence, built on trust. The German medical standard meets Greek warmth, in Kalamaria, Thessaloniki.",
     "hero.cta1":"Book an appointment","hero.cta2":"Meet the doctor",
-    "hero.chip1t":"NICU & PICU","hero.chip1s":"Neonatal intensive care","hero.chip2t":"Infectious Diseases","hero.chip2s":"Rational antibiotic use","hero.chip3t":"IBCLC","hero.chip3s":"Lactation consultant",
     "trust.1":"Academic training in Germany","trust.now":"today","trust.2":"Continuous clinical experience","trust.3":"Excellent parent rating",
     "about.eyebrow":"The Doctor","about.role":"Pediatrician — Child & Adolescent Medicine","about.tag":"Facharzt · Kinder- und Jugendmedizin",
     "about.p1":"<strong>Dr. Christos Thanos</strong> is a Pediatrician, a graduate of the Medical School of the Democritus University of Thrace, with academic training in Germany and specialization in Infectious Diseases and Child & Adolescent Medicine.",
@@ -840,7 +785,6 @@ const I18N = {
     "hero.badge":"Facharztausbildung in Deutschland · Universität Münster","hero.h1a":"Kinderheilkunde mit","hero.h1b":"Herz","hero.h1c":"& wissenschaftlicher Präzision.",
     "hero.sub":"Betreuung von der Geburt bis ins Jugendalter, aufgebaut auf Vertrauen. Der deutsche medizinische Standard trifft auf griechische Herzlichkeit, in Kalamaria, Thessaloniki.",
     "hero.cta1":"Termin vereinbaren","hero.cta2":"Den Arzt kennenlernen",
-    "hero.chip1t":"NICU & PICU","hero.chip1s":"Neugeborenen-Intensiv","hero.chip2t":"Infektiologie","hero.chip2s":"Rationaler Antibiotika-Einsatz","hero.chip3t":"IBCLC","hero.chip3s":"Stillberatung",
     "trust.1":"Akademische Ausbildung in Deutschland","trust.now":"heute","trust.2":"Kontinuierliche klinische Erfahrung","trust.3":"Hervorragende Elternbewertung",
     "about.eyebrow":"Der Arzt","about.role":"Facharzt für Kinder- und Jugendmedizin","about.tag":"Facharzt · Kinder- und Jugendmedizin",
     "about.p1":"<strong>Dr. med. Christos Thanos</strong> ist Kinderarzt, Absolvent der Medizinischen Fakultät der Demokrit-Universität Thrakien, mit akademischer Ausbildung in Deutschland und Spezialisierung in der Infektiologie sowie der Kinder- und Jugendmedizin.",
@@ -870,8 +814,8 @@ const I18N = {
 };
 
 /* brand name spelling per language */
-const BRAND={el:"Χρήστος Θάνος",en:"Christos Thanos",de:"Dr. Christos Thanos"};
-const ABOUTNAME={el:"Christos Thanos",en:"Dr. Christos Thanos",de:"Dr. med. Christos Thanos"};
+const BRAND={el:"Χρήστος Θάνος",en:"Christos Thanos",de:"Dr. med. Christos Thanos"};
+const ABOUTNAME={el:"Χρήστος Θάνος",en:"Dr. Christos Thanos",de:"Dr. med. Christos Thanos"};
 
 function setLang(lang){
   const dict=I18N[lang];
@@ -951,13 +895,6 @@ const io=new IntersectionObserver((entries)=>{
   entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
 },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-scale').forEach(el=>io.observe(el));
-
-/* ============ HERO PARALLAX ============ */
-const heroBg=document.querySelector('.hero-bg img');
-window.addEventListener('scroll',()=>{
-  const y=window.scrollY;
-  if(y<800&&heroBg){heroBg.style.transform=`scale(1.08) translateY(${y*0.18}px)`;}
-},{passive:true});
 
 /* ============ INIT ============ */
 document.getElementById('yr').textContent=new Date().getFullYear();
